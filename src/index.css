@@ -1,0 +1,221 @@
+:root {
+  --primary-color: #5d4037;
+  --secondary-color: #8d6e63;
+  --background-color: #fbe9e7; /* Warm cream/pinkish */
+  --card-bg: #fff;
+  --text-color: #3e2723;
+  --font-heading: 'Georgia', serif;
+  --font-body: 'Arial', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff3e0, #fbe9e7);
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.scroll-indicator {
+  margin-top: 3rem;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  opacity: 0.6;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #fff8e1; /* Slightly different warm tone */
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  scrollbar-width: none; /* Firefox */
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.gallery-card {
+  flex: 0 0 300px; /* Mobile width */
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+}
+
+.media-container {
+  width: 100%;
+  height: 250px; /* Fixed height for consistency */
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+.gallery-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.nav-btn {
+  background: rgba(255,255,255,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  display: none; /* Hidden on mobile */
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* Creator Section */
+.creator-section {
+  padding: 5rem 1rem;
+  text-align: center;
+  background: linear-gradient(to top, #efebe9, #fff);
+}
+
+.creator-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.avatar-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.greeting-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.signature {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+  
+  .gallery-card {
+    flex: 0 0 500px; /* Tablet/Desktop width */
+  }
+  
+  .media-container {
+    height: 350px;
+  }
+  
+  .nav-btn {
+    display: block;
+  }
+}
